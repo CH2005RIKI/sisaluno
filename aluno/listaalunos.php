@@ -75,7 +75,7 @@ $retorno->execute();
     </table>
 
     <div class="button-container">
-        <button class="button button3"><a href="../index.php">VOLTAR</a></button>
+        <button class="button button3"><a href="./cadaluno.php">VOLTAR</a></button>
     </div>
 </body>
 </html>
