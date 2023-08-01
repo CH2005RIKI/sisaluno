@@ -75,7 +75,7 @@
     </table>                                    
   </form>
   <div class="button-container">
-        <button class="button button3"><a href="../index.php">Voltar</a></button>
+        <button class="button button3"><a href="./listaprof.php">Voltar</a></button>
     </div>
 </body>
 </html>
