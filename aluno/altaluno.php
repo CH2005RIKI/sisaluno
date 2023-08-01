@@ -30,7 +30,7 @@
    $array_retorno=$retorno->fetch();
    
    ##armazena retorno em variaveis
-   $Nome = $array_retorno['nome'];
+   $nome = $array_retorno['nome'];
    $idade = $array_retorno['idade'];
    $datanasc = $array_retorno['datanasc'];
    $cpfaluno = $array_retorno['cpf'];
@@ -55,28 +55,19 @@
         </thead>
        <tbody>
         <tr>
-            <td>
-            <input type="text" name="nome" id="" value=<?php echo $Nome?> >
-            </td>
-            <td><input type="text" name="idade" id="" value=<?php echo $idade ?> >
-            </td>
-            <td>
-            <input type="date" name="datanasc" id="" value=<?php echo $datanasc ?> >
-            </td>
-            <td>
-            <input type="text" name="cpf" id="" value=<?php echo $cpfaluno ?>>
-            </td>
-            <td>
-            <input type="number" name="endereco"  id="" value="<?php echo $endereco?>">
+            <input type="hidden" name="id"  id="" value="<?php echo $id; ?>" >
+            <td><input type="text" name="nome" id="" maxlength="100" value=<?php echo $nome?>></td>
+            <td><input type="number" onkeypress="return event.charCode >= 48" min="1" name="idade" id="" maxlength="3" value=<?php echo $idade ?> required=""></td>
+            <td><input type="text" name="endereco" id="" maxlength="100" value=<?php echo $endereco?> required=""></td>
+            <td><input type="text" name="cpf" id="" maxlength="14" value=<?php echo $cpfaluno ?> required></td>
+            <td><input type="date" name="datanasc" id="" value=<?php echo $datanasc?> required></td>
+            <td><select name="estatus" id="" value=<?php echo $estatus?> required="">
+                    <option value="Ap">Aprovado</option>
+                    <option value="Rp">Reprovado</option>
+                </select>
             </td>
             <td>
-                <select name="estatus" id="">
-                    <option value="Ap" <?php if($estatus == 'Ap') echo 'slected'?>>Aprovado</option>
-                    <option value="Rp"><?php if ($estatus == 'RP') echo 'slected'?>Reprovado</option>
-                    </select>
-            </td>
-            <td>
-            <input type="submit" name="update" value="Alterar">
+            <input type="submit" name="update" value="Alterar" >
             </td>
 
         </tr>
@@ -84,7 +75,7 @@
     </table>                                    
   </form>
   <div class="button-container">
-        <button class="button button3"><a href="../index.php">Voltar</a></button>
+        <button class="button button3"><a href="./listaalunos.php">Voltar</a></button>
     </div>
 </body>
 </html>
