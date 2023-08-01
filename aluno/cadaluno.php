@@ -29,6 +29,7 @@
     </select>  
 
      <input type="submit" name="cadastrar" value="CADASTRAR">
+     <a href="./listaalunos.php">CADASTRADOS</a>
      </form>
 
      <button class="button"><a href="../index.php">VOLTAR</a></button>
