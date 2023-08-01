@@ -4,53 +4,25 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>INÍCIO</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-    <button class="button"><a href="./aluno/cadaluno.php">CADASTAR</a></button>
-    <button class="button"><a href="./aluno/listaalunos.php">LISTA</a></button>
-  
-
+    
+    
+<div class="img" >
+            <img src="https://i.pinimg.com/564x/31/c6/25/31c625bc573533172b0dc6b46b300403.jpg" alt="">
+        </div>
+    <div class="all">
+        <div class="tex">
+            <h1>CADASTRE UMA DESSAS OPÇÕES</h1>
+        </div>
+        <div class="botoes">
+        <button class="button"><a href="./aluno/cadaluno.php">ALUNO</a></button>
+        <button class="button"><a href="./professor/cadprof.php">PROFESSOR</a></button>
+        <button class="button"><a href="./disciplina/caddisciplina">DISCIPlINA</a></button>
+        </div>
+    </div>
+    
 </body>
 </html>
-
-<style>
-
-body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            background-color: #fcb4d5;
-        }
-        
-        .button {
-            display: inline-block;
-            margin: 10px;
-            padding: 10px ;
-            background-color: #4CAF50;
-            color: #fff;
-            text-decoration: none;
-            border: none;
-            border-radius: 4px;
-            font-size: 16px;
-            cursor: pointer;
-        }
-        
-        .button:hover {
-            background-color: #0056b3;
-        }
-        
-        .button:active {
-            background-color: #003d80;
-        }
-        a{
-            text-decoration: none;
-            color:#fff;
-            padding: 10px 40px;
-            margin: 10px;
-        }
-
-</style>
