@@ -23,7 +23,26 @@ if(isset($_POST['cadastrar'])) {
     $datanascimento = $_POST['datanascimento'];
     $estatus = $_POST['select'];
 
-        
+    // Validate age and date of birth compatibility
+    $dataNascimentoObj = new DateTime($datanascimento);
+    $dataAtualObj = new DateTime();
+    $idadeCalculada = $dataAtualObj->diff($dataNascimentoObj)->y;
+
+    if ($idadeCalculada < $idade) {
+        echo "A data de nascimento não corresponde à idade informada!";
+        exit;
+    }
+
+    if ($idade < 18) {
+        echo "O Professor deve ter 18 anos ou mais.";
+        exit;
+
+    }
+    // Verificar se o nome contém apenas letras
+    if (!validarNome($nome)) {
+        echo "O nome deve conter apenas letras (sem caracteres especiais ou números).";
+        exit;
+    }
     
 
         ##codigo SQL
@@ -51,6 +70,27 @@ if(isset($_POST['update'])) {
     $cpfprof = $_POST['cpfprof'];
     $endereco = $_POST["endereco"];
     $estatus = $_POST["estatus"];
+
+    // Validate age and date of birth compatibility
+    $dataNascimentoObj = new DateTime($datanascimento);
+    $dataAtualObj = new DateTime();
+    $idadeCalculada = $dataAtualObj->diff($dataNascimentoObj)->y;
+
+    if ($idadeCalculada < $idade) {
+        echo "A data de nascimento não corresponde à idade informada!";
+        exit;
+    }
+
+    if ($idade < 18) {
+        echo "O Professor deve ter 18 anos ou mais.";
+        exit;
+
+    }
+    // Verificar se o nome contém apenas letras
+    if (!validarNome($nome)) {
+        echo "O nome deve conter apenas letras (sem caracteres especiais ou números).";
+        exit;
+    }
 
     $sql = "UPDATE professor SET nome = :nomeprof, idade = :idade, datanascimento = :datanasc, cpf = :cpfprof, endereco = :endereco, estatus = :estatus WHERE id = :id";
     $stmt = $conexao->prepare($sql);
