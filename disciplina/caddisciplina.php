@@ -18,7 +18,18 @@
      <label for="">CARGA HORARIA</label>
      <input type="text" required="" name="cargahoraria">
      <label for="">ID DO PROFESSOR</label>
-     <input type="number" required="" name="id_professor">
+     <select name="professorid" required="">
+     <?php
+        require_once('../conexao.php');
+        $query = "SELECT id FROM professor";
+        $result = $conexao->query($query);
+        if ($result) {
+            while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
+                echo "<option value='" . $row['id'] . "'>" . $row['id'] . "</option>";
+            }
+        }
+        ?>
+    </select>
 
      <input type="submit" name="cadastrar" value="CADASTRAR">
      <a href="./listadisciplina.php">CADASTRADOS</a>
